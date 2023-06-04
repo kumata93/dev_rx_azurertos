@@ -34,14 +34,26 @@
  * ThreadX object control blocks definitions
  **********************************************************************************************************************/
 extern TX_THREAD               new_thread1;
+extern TX_THREAD               new_thread2;
+extern TX_THREAD               new_thread3;
+extern TX_THREAD               new_thread4;
+extern TX_THREAD               new_thread5;
 
 /***********************************************************************************************************************
  * Stacks definitions
  **********************************************************************************************************************/
 extern UCHAR               new_thread1_memory_stack[1024];
+extern UCHAR               new_thread2_memory_stack[1024];
+extern UCHAR               new_thread3_memory_stack[1024];
+extern UCHAR               new_thread4_memory_stack[1024];
+extern UCHAR               new_thread5_memory_stack[1024];
 /***********************************************************************************************************************
  * Function prototypes definition
  **********************************************************************************************************************/
 extern void        new_thread1_entry(ULONG entry_input);
+extern void        new_thread2_entry(ULONG entry_input);
+extern void        new_thread3_entry(ULONG entry_input);
+extern void        new_thread4_entry(ULONG entry_input);
+extern void        new_thread5_entry(ULONG entry_input);
 
 #endif /* AZURERTOS_OBJECT_INIT_H_ */

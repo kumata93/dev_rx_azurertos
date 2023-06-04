@@ -7,7 +7,7 @@
                 <option id="com.renesas.smc.toolchain.option.language" key="com.renesas.smc.toolchain.option.language.c"/>
                 <option id="com.renesas.smc.toolchain.option.buildArtefactType" key="com.renesas.smc.toolchain.option.buildArtefactType.exe"/>
                 <option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.azurertos">
-                    <item id="com.renesas.smc.toolchain.option.rtos.azurertos" value="6.2.0_rel-rx-1.0.0"/>
+                    <item id="com.renesas.smc.toolchain.option.rtos.azurertos" value="6.2.1_rel-rx-1.0.0"/>
                 </option>
                 <option id="com.renesas.smc.toolchain.option.dual" key="com.renesas.smc.toolchain.option.dual.false"/>
             </toolchain>
@@ -17,7 +17,7 @@
     </general>
     <tool id="SWComponent" version="1.0.0.0">
         <configuration inuse="true" name="r_bsp">
-            <component description="依存モジュール: なし&#10;The r_bsp package provides a foundation for code to be built on top of. It provides startup code, iodefines, and MCU information for different boards. There are 2 folders that make up the r_bsp package. The 'mcu' folder contains files that are common to a MCU group. These files provide functionality such as easy register access, CPU functions, and a file named 'mcu_info.h' for each MCU group. The 'mcu_info.h' file has information about the MCU on the board and is configured based on the information given in r_bsp_config.h. The information in 'mcu_info.h' is used to help configure Renesas middleware that uses the r_bsp package. The 'board' folder has a folder with startup code for each supported board.  Which MCU and board is chosen is decided by the settings in 'platform.h'. The user can choose which board they are using by uncommenting the include path that applies to their board. For example, if you are using the RSK+RX64M then you would uncomment the #include &quot;./board/generic_rx64m/r_bsp.h&quot; include path. Users are encouraged to add their own boards to the 'board' directory. BSPs are configured by using the r_bsp_config.h file. Each board will have a reference configuration file named r_bsp_config_reference.h. The user should copy this file to their project, rename it to r_bsp_config.h, and use the options inside the file to configure the BSP for their project." detailDescription="Board Support Packages." display="r_bsp" id="r_bsp7.20" version="7.20">
+            <component description="依存モジュール: なし&#10;The r_bsp package provides a foundation for code to be built on top of. It provides startup code, iodefines, and MCU information for different boards. There are 2 folders that make up the r_bsp package. The 'mcu' folder contains files that are common to a MCU group. These files provide functionality such as easy register access, CPU functions, and a file named 'mcu_info.h' for each MCU group. The 'mcu_info.h' file has information about the MCU on the board and is configured based on the information given in r_bsp_config.h. The information in 'mcu_info.h' is used to help configure Renesas middleware that uses the r_bsp package. The 'board' folder has a folder with startup code for each supported board.  Which MCU and board is chosen is decided by the settings in 'platform.h'. The user can choose which board they are using by uncommenting the include path that applies to their board. For example, if you are using the RSK+RX64M then you would uncomment the #include &quot;./board/generic_rx64m/r_bsp.h&quot; include path. Users are encouraged to add their own boards to the 'board' directory. BSPs are configured by using the r_bsp_config.h file. Each board will have a reference configuration file named r_bsp_config_reference.h. The user should copy this file to their project, rename it to r_bsp_config.h, and use the options inside the file to configure the BSP for their project." detailDescription="Board Support Packages." display="r_bsp" id="r_bsp7.21" version="7.21">
                 <gridItem id="BSP_CFG_USER_STACK_ENABLE" selectedIndex="1"/>
                 <gridItem id="BSP_CFG_USTACK_BYTES" selectedIndex="0x1000"/>
                 <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x400"/>
@@ -78,8 +78,8 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="99852ebf-d6b9-42ff-949f-e567488ee203" inuse="true" name="threadx">
-            <component description="依存モジュール: なし&#10;Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" detailDescription="Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" display="Azure RTOS ThreadX" id="threadx6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
+        <configuration enable="true" exclude="false" id="0b52d931-7ae2-4ce6-8d13-98c54c5fc9db" inuse="true" name="threadx">
+            <component description="依存モジュール: なし&#10;Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" detailDescription="Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" display="Azure RTOS ThreadX" id="threadx6.2.1_rel-rx-1.0.0" version="6.2.1_rel-rx-1.0.0">
                 <gridItem id="USE_TX_MAX_PRIORITIES" selectedIndex="0"/>
                 <gridItem id="TX_MAX_PRIORITIES" selectedIndex="32"/>
                 <gridItem id="USE_TX_MINIMUM_STACK" selectedIndex="0"/>
@@ -127,12 +127,12 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="3c6d7035-cde4-4fc4-9799-c23ee8630736" inuse="true" name="netxduo_addons">
-            <component description="依存モジュール: filex, netxduo&#10;Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." detailDescription="Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." display="Azure RTOS NetX Duo Addons" id="netxduo_addons6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0"/>
+        <configuration enable="true" exclude="false" id="c28954a9-4e58-49c2-9a32-d6c8f8d994d7" inuse="true" name="netxduo_addons">
+            <component description="依存モジュール: filex, netxduo&#10;Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." detailDescription="Azure RTOS NetX Duo Addons provide additional libraries for NetX Duo such as azure_iot (azure-sdk-for-c), cloud, dhcp, dns, http, mqtt, nat, smtp, snmp etc." display="Azure RTOS NetX Duo Addons" id="netxduo_addons6.2.1_rel-rx-1.0.0" version="6.2.1_rel-rx-1.0.0"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="6f364678-3c22-40be-af4f-2522a1b50b31" inuse="true" name="netxduo">
-            <component description="依存モジュール: threadx&#10;Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" detailDescription="Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" display="Azure RTOS NetX Duo" id="netxduo6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
+        <configuration enable="true" exclude="false" id="2c00370a-e890-4338-9795-f2db32c27959" inuse="true" name="netxduo">
+            <component description="依存モジュール: threadx&#10;Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" detailDescription="Azure RTOS NetX Duo is an advanced, industrial-grade TCP/IP network stack designed specifically for deeply embedded real-time and IoT applications" display="Azure RTOS NetX Duo" id="netxduo6.2.1_rel-rx-1.0.0" version="6.2.1_rel-rx-1.0.0">
                 <gridItem id="USE_NX_MAX_PHYSICAL_INTERFACES" selectedIndex="0"/>
                 <gridItem id="NX_MAX_PHYSICAL_INTERFACES" selectedIndex="1"/>
                 <gridItem id="USE_NX_DISABLE_LOOPBACK_INTERFACE" selectedIndex="0"/>
@@ -328,8 +328,8 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="3b189381-3f67-4400-9ba8-494090493632" inuse="true" name="filex">
-            <component description="依存モジュール: threadx&#10;Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" detailDescription="Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" display="Azure RTOS FileX" id="filex6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
+        <configuration enable="true" exclude="false" id="3e2ac1b5-1297-4829-955d-84bb40bc9dc1" inuse="true" name="filex">
+            <component description="依存モジュール: threadx&#10;Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" detailDescription="Azure RTOS FileX is a high-performance, FAT-compatible file system that’s fully integrated with Azure RTOS ThreadX" display="Azure RTOS FileX" id="filex6.2.1_rel-rx-1.0.0" version="6.2.1_rel-rx-1.0.0">
                 <gridItem id="USE_FX_MAX_LONG_NAME_LEN" selectedIndex="0"/>
                 <gridItem id="FX_MAX_LONG_NAME_LEN" selectedIndex="256"/>
                 <gridItem id="USE_FX_MAX_LAST_NAME_LEN" selectedIndex="0"/>
@@ -776,7 +776,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="f7222991-20c6-4d52-8821-a0afde617494" inuse="true" name="azurertos_object">
+        <configuration enable="true" exclude="false" id="fa22bacc-5d03-431e-a089-b5614a7bfe71" inuse="true" name="azurertos_object">
             <allocatable id="" name="" type=""/>
             <component description="" detailDescription="" display="AzureRTOS Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.azurertos.object" version="1.0.113"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
@@ -1280,15 +1280,24 @@
         <pinItem allocation="81" comments="" direction="None" id="RMII0_TXD_EN" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="86" comments="" direction="None" id="ET0_MDIO" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="58" comments="" direction="None" id="RMII0_CRS_DV" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinnumItem comment="SENSOR-SDA" id="44" symbolicname=""/>
         <pinnumItem comment="LED2_B" id="88" symbolicname=""/>
+        <pinnumItem comment="SENSOR-SCL" id="45" symbolicname=""/>
         <pinnumItem comment="SERIAL-CTS" id="89" symbolicname=""/>
+        <pinnumItem comment="USB_DM" id="47" symbolicname=""/>
+        <pinnumItem comment="USB_DP" id="48" symbolicname=""/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-RES_N" id="113" symbolicname=""/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-RES_N" id="114" symbolicname=""/>
         <pinnumItem comment="LED2_G" id="90" symbolicname=""/>
         <pinnumItem comment="LED4" id="94" symbolicname=""/>
+        <pinnumItem comment="PMOD1-GPIO1" id="51" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-LINKSTA" id="52" symbolicname=""/>
         <pinnumItem comment="PMOD2-GPIO1" id="96" symbolicname=""/>
+        <pinnumItem comment="PMOD2-GPIO3" id="54" symbolicname=""/>
         <pinnumItem comment="BIOMETRIC-INT" id="98" symbolicname=""/>
+        <pinnumItem comment="PMOD2-GPIO2" id="56" symbolicname=""/>
         <pinnumItem comment="PMOD1-CS" id="13" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-CRS_DV" id="58" symbolicname=""/>
         <pinnumItem comment="XCIN" id="17" symbolicname=""/>
         <pinnumItem comment="XCOUT" id="18" symbolicname=""/>
         <pinnumItem comment="S1" id="19" symbolicname=""/>
@@ -1300,46 +1309,37 @@
         <pinnumItem comment="PMOD1-MISO" id="7" symbolicname=""/>
         <pinnumItem comment="PMOD1-MOSI" id="8" symbolicname=""/>
         <pinnumItem comment="MICROPHONES1-OUT" id="129" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-TXD1" id="63" symbolicname=""/>
         <pinnumItem comment="XTAL" id="20" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-TXD0" id="64" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-RST#" id="65" symbolicname=""/>
         <pinnumItem comment="EXTAL" id="22" symbolicname=""/>
+        <pinnumItem comment="SERIAL-TXD" id="67" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-RX_ER" id="68" symbolicname=""/>
         <pinnumItem comment="PMOD2-SCK" id="25" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-REF-50-CK" id="69" symbolicname=""/>
         <pinnumItem comment="PMOD2-MISO" id="26" symbolicname=""/>
         <pinnumItem comment="PMOD2-MOSI" id="27" symbolicname=""/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-INT" id="134" symbolicname=""/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-INT" id="135" symbolicname=""/>
-        <pinnumItem comment="LED6" id="32" symbolicname=""/>
-        <pinnumItem comment="USB_VBUSEN" id="33" symbolicname=""/>
-        <pinnumItem comment="PMOD2-CS" id="34" symbolicname=""/>
-        <pinnumItem comment="LED3" id="35" symbolicname=""/>
-        <pinnumItem comment="LED2_R" id="38" symbolicname=""/>
-        <pinnumItem comment="USBFS_VBUS" id="40" symbolicname=""/>
-        <pinnumItem comment="PMOD1-GPIO0" id="42" symbolicname=""/>
-        <pinnumItem comment="USB_OVRCURA" id="43" symbolicname=""/>
-        <pinnumItem comment="SENSOR-SDA" id="44" symbolicname=""/>
-        <pinnumItem comment="SENSOR-SCL" id="45" symbolicname=""/>
-        <pinnumItem comment="USB_DM" id="47" symbolicname=""/>
-        <pinnumItem comment="USB_DP" id="48" symbolicname=""/>
-        <pinnumItem comment="PMOD1-GPIO1" id="51" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-LINKSTA" id="52" symbolicname=""/>
-        <pinnumItem comment="PMOD2-GPIO3" id="54" symbolicname=""/>
-        <pinnumItem comment="PMOD2-GPIO2" id="56" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-CRS_DV" id="58" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-TXD1" id="63" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-TXD0" id="64" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-RST#" id="65" symbolicname=""/>
-        <pinnumItem comment="SERIAL-TXD" id="67" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-RX_ER" id="68" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-REF-50-CK" id="69" symbolicname=""/>
         <pinnumItem comment="SERIAL-RXD" id="70" symbolicname=""/>
         <pinnumItem comment="ETHERNET-RXD0" id="71" symbolicname=""/>
         <pinnumItem comment="ETHERNET-RXD1" id="72" symbolicname=""/>
         <pinnumItem comment="SERIAL-RTS" id="75" symbolicname=""/>
+        <pinnumItem comment="LED6" id="32" symbolicname=""/>
+        <pinnumItem comment="USB_VBUSEN" id="33" symbolicname=""/>
+        <pinnumItem comment="PMOD2-CS" id="34" symbolicname=""/>
         <pinnumItem comment="PMOD1-GPIO2" id="78" symbolicname=""/>
+        <pinnumItem comment="LED3" id="35" symbolicname=""/>
         <pinnumItem comment="PMOD1-GPIO3" id="79" symbolicname=""/>
+        <pinnumItem comment="LED2_R" id="38" symbolicname=""/>
         <pinnumItem comment="MOTION-TRACKING-INT1" id="101" symbolicname=""/>
         <pinnumItem comment="ETHERNET-TXD_EN" id="81" symbolicname=""/>
+        <pinnumItem comment="USBFS_VBUS" id="40" symbolicname=""/>
         <pinnumItem comment="ETHERNET-MDC" id="85" symbolicname=""/>
+        <pinnumItem comment="PMOD1-GPIO0" id="42" symbolicname=""/>
         <pinnumItem comment="ETHERNET-MDIO" id="86" symbolicname=""/>
+        <pinnumItem comment="USB_OVRCURA" id="43" symbolicname=""/>
     </tool>
     <tool id="Summary" version="1.0.0.0">
         <option id="com.renesas.smc.code.path" value="src\smc_gen"/>

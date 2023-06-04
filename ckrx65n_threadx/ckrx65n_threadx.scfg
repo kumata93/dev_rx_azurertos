@@ -370,7 +370,7 @@
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="cefcb551-3cd5-401d-8316-5f668820d97b" inuse="true" name="threadx">
+        <configuration enable="true" exclude="false" id="e61de8ab-e2d2-4118-82e0-7d8690f521ad" inuse="true" name="threadx">
             <component description="依存モジュール: なし&#10;Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" detailDescription="Azure RTOS ThreadX is an advanced real-time operating system (RTOS) designed specifically for deeply embedded applications" display="Azure RTOS ThreadX" id="threadx6.2.0_rel-rx-1.0.0" version="6.2.0_rel-rx-1.0.0">
                 <gridItem id="USE_TX_MAX_PRIORITIES" selectedIndex="0"/>
                 <gridItem id="TX_MAX_PRIORITIES" selectedIndex="32"/>
@@ -419,7 +419,7 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration enable="true" exclude="false" id="1e22f3dc-14d9-4655-bb3f-a1feb145367d" inuse="true" name="azurertos_object">
+        <configuration enable="true" exclude="false" id="a4a2cadb-71aa-4466-aa2b-8745368cee84" inuse="true" name="azurertos_object">
             <allocatable id="" name="" type="">
                 <allocatable id="THREAD" name="THREAD" type="TABALLOCATABLE">
                     <allocatable id="THREAD1" name="THREAD1" type="ROWALLOCATABLE">
@@ -428,8 +428,52 @@
                         <option defaultValue="new_thread[X]_entry" id="entryfunction" value="new_thread1_entry"/>
                         <option defaultValue="0" id="entryinput" value="0"/>
                         <option defaultValue="1024" id="stacksize" value="1024"/>
-                        <option defaultValue="1" id="priority" value="1"/>
-                        <option defaultValue="1" id="preemptionthreshold" value="1"/>
+                        <option defaultValue="1" id="priority" value="16"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="16"/>
+                        <option defaultValue="0" id="timeslice" value="0"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                    <allocatable id="THREAD2" name="THREAD2" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="new_thread2"/>
+                        <option defaultValue="New Thread" id="threadname" value="New Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="new_thread2_entry"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="1024"/>
+                        <option defaultValue="1" id="priority" value="17"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="17"/>
+                        <option defaultValue="0" id="timeslice" value="0"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                    <allocatable id="THREAD3" name="THREAD3" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="new_thread3"/>
+                        <option defaultValue="New Thread" id="threadname" value="New Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="new_thread3_entry"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="1024"/>
+                        <option defaultValue="1" id="priority" value="18"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="18"/>
+                        <option defaultValue="0" id="timeslice" value="0"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                    <allocatable id="THREAD4" name="THREAD4" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="new_thread4"/>
+                        <option defaultValue="New Thread" id="threadname" value="New Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="new_thread4_entry"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="1024"/>
+                        <option defaultValue="1" id="priority" value="17"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="17"/>
+                        <option defaultValue="0" id="timeslice" value="0"/>
+                        <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
+                    </allocatable>
+                    <allocatable id="THREAD5" name="THREAD5" type="ROWALLOCATABLE">
+                        <option defaultValue="new_thread[X]" id="threadpointer" value="new_thread5"/>
+                        <option defaultValue="New Thread" id="threadname" value="New Thread"/>
+                        <option defaultValue="new_thread[X]_entry" id="entryfunction" value="new_thread5_entry"/>
+                        <option defaultValue="0" id="entryinput" value="0"/>
+                        <option defaultValue="1024" id="stacksize" value="1024"/>
+                        <option defaultValue="1" id="priority" value="16"/>
+                        <option defaultValue="1" id="preemptionthreshold" value="16"/>
                         <option defaultValue="0" id="timeslice" value="0"/>
                         <option defaultValue="TX_AUTO_START" id="autostart" value="TX_AUTO_START"/>
                     </allocatable>
@@ -932,14 +976,23 @@
         <pinItem allocation="22" comments="" direction="None" id="EXTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinItem allocation="16" comments="" direction="None" id="FINED" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
         <pinnumItem comment="LED2_B" id="88" symbolicname=""/>
+        <pinnumItem comment="SENSOR-SDA" id="44" symbolicname=""/>
         <pinnumItem comment="SERIAL-CTS" id="89" symbolicname=""/>
+        <pinnumItem comment="SENSOR-SCL" id="45" symbolicname=""/>
+        <pinnumItem comment="USB_DM" id="47" symbolicname=""/>
+        <pinnumItem comment="USB_DP" id="48" symbolicname=""/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-RES_N" id="113" symbolicname=""/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-RES_N" id="114" symbolicname=""/>
         <pinnumItem comment="LED2_G" id="90" symbolicname=""/>
         <pinnumItem comment="LED4" id="94" symbolicname=""/>
+        <pinnumItem comment="PMOD1-GPIO1" id="51" symbolicname=""/>
         <pinnumItem comment="PMOD2-GPIO1" id="96" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-LINKSTA" id="52" symbolicname=""/>
         <pinnumItem comment="BIOMETRIC-INT" id="98" symbolicname=""/>
+        <pinnumItem comment="PMOD2-GPIO3" id="54" symbolicname=""/>
+        <pinnumItem comment="PMOD2-GPIO2" id="56" symbolicname=""/>
         <pinnumItem comment="PMOD1-CS" id="13" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-CRS_DV" id="58" symbolicname=""/>
         <pinnumItem comment="XCIN" id="17" symbolicname=""/>
         <pinnumItem comment="XCOUT" id="18" symbolicname=""/>
         <pinnumItem comment="S1" id="19" symbolicname=""/>
@@ -951,46 +1004,37 @@
         <pinnumItem comment="PMOD1-MISO" id="7" symbolicname=""/>
         <pinnumItem comment="PMOD1-MOSI" id="8" symbolicname=""/>
         <pinnumItem comment="MICROPHONES1-OUT" id="129" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-TXD1" id="63" symbolicname=""/>
         <pinnumItem comment="XTAL" id="20" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-TXD0" id="64" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-RST#" id="65" symbolicname=""/>
         <pinnumItem comment="EXTAL" id="22" symbolicname=""/>
+        <pinnumItem comment="SERIAL-TXD" id="67" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-RX_ER" id="68" symbolicname=""/>
         <pinnumItem comment="PMOD2-SCK" id="25" symbolicname=""/>
+        <pinnumItem comment="ETHERNET-REF-50-CK" id="69" symbolicname=""/>
         <pinnumItem comment="PMOD2-MISO" id="26" symbolicname=""/>
         <pinnumItem comment="PMOD2-MOSI" id="27" symbolicname=""/>
         <pinnumItem comment="INDOOR-AIR-QUALITY-INT" id="134" symbolicname=""/>
         <pinnumItem comment="OUTDOOR-AIR-QUALITY-INT" id="135" symbolicname=""/>
-        <pinnumItem comment="LED6" id="32" symbolicname=""/>
-        <pinnumItem comment="USB_VBUSEN" id="33" symbolicname=""/>
-        <pinnumItem comment="PMOD2-CS" id="34" symbolicname=""/>
-        <pinnumItem comment="LED3" id="35" symbolicname=""/>
-        <pinnumItem comment="LED2_R" id="38" symbolicname=""/>
-        <pinnumItem comment="USBFS_VBUS" id="40" symbolicname=""/>
-        <pinnumItem comment="PMOD1-GPIO0" id="42" symbolicname=""/>
-        <pinnumItem comment="USB_OVRCURA" id="43" symbolicname=""/>
-        <pinnumItem comment="SENSOR-SDA" id="44" symbolicname=""/>
-        <pinnumItem comment="SENSOR-SCL" id="45" symbolicname=""/>
-        <pinnumItem comment="USB_DM" id="47" symbolicname=""/>
-        <pinnumItem comment="USB_DP" id="48" symbolicname=""/>
-        <pinnumItem comment="PMOD1-GPIO1" id="51" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-LINKSTA" id="52" symbolicname=""/>
-        <pinnumItem comment="PMOD2-GPIO3" id="54" symbolicname=""/>
-        <pinnumItem comment="PMOD2-GPIO2" id="56" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-CRS_DV" id="58" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-TXD1" id="63" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-TXD0" id="64" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-RST#" id="65" symbolicname=""/>
-        <pinnumItem comment="SERIAL-TXD" id="67" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-RX_ER" id="68" symbolicname=""/>
-        <pinnumItem comment="ETHERNET-REF-50-CK" id="69" symbolicname=""/>
         <pinnumItem comment="SERIAL-RXD" id="70" symbolicname=""/>
         <pinnumItem comment="ETHERNET-RXD0" id="71" symbolicname=""/>
         <pinnumItem comment="ETHERNET-RXD1" id="72" symbolicname=""/>
         <pinnumItem comment="SERIAL-RTS" id="75" symbolicname=""/>
+        <pinnumItem comment="LED6" id="32" symbolicname=""/>
+        <pinnumItem comment="USB_VBUSEN" id="33" symbolicname=""/>
+        <pinnumItem comment="PMOD2-CS" id="34" symbolicname=""/>
         <pinnumItem comment="PMOD1-GPIO2" id="78" symbolicname=""/>
+        <pinnumItem comment="LED3" id="35" symbolicname=""/>
         <pinnumItem comment="PMOD1-GPIO3" id="79" symbolicname=""/>
+        <pinnumItem comment="LED2_R" id="38" symbolicname=""/>
         <pinnumItem comment="MOTION-TRACKING-INT1" id="101" symbolicname=""/>
         <pinnumItem comment="ETHERNET-TXD_EN" id="81" symbolicname=""/>
+        <pinnumItem comment="USBFS_VBUS" id="40" symbolicname=""/>
         <pinnumItem comment="ETHERNET-MDC" id="85" symbolicname=""/>
+        <pinnumItem comment="PMOD1-GPIO0" id="42" symbolicname=""/>
         <pinnumItem comment="ETHERNET-MDIO" id="86" symbolicname=""/>
+        <pinnumItem comment="USB_OVRCURA" id="43" symbolicname=""/>
     </tool>
     <tool id="Summary" version="1.0.0.0">
         <option id="com.renesas.smc.code.path" value="src\smc_gen"/>

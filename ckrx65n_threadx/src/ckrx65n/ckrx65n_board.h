@@ -1,0 +1,43 @@
+/*
+ * ckrx65n_board.h
+ *
+ *  Created on: 2023/06/04
+ *      Author: airpl
+ */
+
+#ifndef SRC_CKRX65N_CKRX65N_BOARD_H_
+#define SRC_CKRX65N_CKRX65N_BOARD_H_
+#include "platform.h"
+
+/* LED ON/OFF*/
+#define LED_ON 0
+#define LED_OFF 1
+
+/* LED2 RGB */
+#define LED2_R PORT1.PODR.BIT.B7
+#define LED2_G PORTA.PODR.BIT.B5
+#define LED2_B PORTA.PODR.BIT.B7
+#define LED2_INIT \
+		{\
+		LED2_R=LED_OFF; PORT1.PDR.BIT.B7=1;\
+		LED2_G=LED_OFF; PORTA.PDR.BIT.B5=1;\
+		LED2_B=LED_OFF; PORTA.PDR.BIT.B7=1;\
+		}
+
+/* Board LED */
+/* LED3 GREEN */
+#define LED3 PORT2.PODR.BIT.B2
+#define LED3_INIT {LED3=LED_OFF; PORT2.PDR.BIT.B2=1;}
+
+/* LED4 GREEN */
+#define LED4 PORTA.PODR.BIT.B3
+#define LED4_INIT {LED4 = LED_OFF; PORTA.PDR.BIT.B3=1;}
+
+/* LED6 RED*/
+#define LED6 PORT2.PODR.BIT.B5
+#define LED6_INIT {LED6=LED_OFF; ;PORT2.PDR.BIT.B5=1;}
+
+/* LED INIT*/
+#define LED_INIT {LED2_INIT LED3_INIT LED4_INIT LED6_INIT}
+
+#endif /* SRC_CKRX65N_CKRX65N_BOARD_H_ */

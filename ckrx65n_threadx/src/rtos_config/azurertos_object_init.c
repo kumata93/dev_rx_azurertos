@@ -43,11 +43,19 @@
  * ThreadX object control blocks definitions
  **********************************************************************************************************************/
 TX_THREAD               new_thread1;
+TX_THREAD               new_thread2;
+TX_THREAD               new_thread3;
+TX_THREAD               new_thread4;
+TX_THREAD               new_thread5;
 
 /***********************************************************************************************************************
  * Stacks definitions
  **********************************************************************************************************************/
 UCHAR               new_thread1_memory_stack[1024];
+UCHAR               new_thread2_memory_stack[1024];
+UCHAR               new_thread3_memory_stack[1024];
+UCHAR               new_thread4_memory_stack[1024];
+UCHAR               new_thread5_memory_stack[1024];
 
 /***********************************************************************************************************************
  * Function Name: tx_application_define_user
@@ -63,9 +71,57 @@ void tx_application_define_user (void)
 
     UINT status_new_thread1;
 
-    status_new_thread1 = tx_thread_create(&new_thread1, "New Thread", new_thread1_entry, 0, new_thread1_memory_stack, 1024, 1, 1, 0, TX_AUTO_START);
+    status_new_thread1 = tx_thread_create(&new_thread1, "New Thread", new_thread1_entry, 0, new_thread1_memory_stack, 1024, 16, 16, 0, TX_AUTO_START);
 
     if (TX_SUCCESS != status_new_thread1)
+    {
+        while (1)
+        {
+            /* Failed! Thread can not be created. */
+        }
+    }
+
+    UINT status_new_thread2;
+
+    status_new_thread2 = tx_thread_create(&new_thread2, "New Thread", new_thread2_entry, 0, new_thread2_memory_stack, 1024, 17, 17, 0, TX_AUTO_START);
+
+    if (TX_SUCCESS != status_new_thread2)
+    {
+        while (1)
+        {
+            /* Failed! Thread can not be created. */
+        }
+    }
+
+    UINT status_new_thread3;
+
+    status_new_thread3 = tx_thread_create(&new_thread3, "New Thread", new_thread3_entry, 0, new_thread3_memory_stack, 1024, 18, 18, 0, TX_AUTO_START);
+
+    if (TX_SUCCESS != status_new_thread3)
+    {
+        while (1)
+        {
+            /* Failed! Thread can not be created. */
+        }
+    }
+
+    UINT status_new_thread4;
+
+    status_new_thread4 = tx_thread_create(&new_thread4, "New Thread", new_thread4_entry, 0, new_thread4_memory_stack, 1024, 17, 17, 0, TX_AUTO_START);
+
+    if (TX_SUCCESS != status_new_thread4)
+    {
+        while (1)
+        {
+            /* Failed! Thread can not be created. */
+        }
+    }
+
+    UINT status_new_thread5;
+
+    status_new_thread5 = tx_thread_create(&new_thread5, "New Thread", new_thread5_entry, 0, new_thread5_memory_stack, 1024, 16, 16, 0, TX_AUTO_START);
+
+    if (TX_SUCCESS != status_new_thread5)
     {
         while (1)
         {
